@@ -17,7 +17,7 @@ public class MainTest {
 //        Person person = applicationContext.getBean(Person.class);
 //        System.out.println(person);
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
-        Person person = (Person) applicationContext.getBean("person01");
+        Person person = applicationContext.getBean(Person.class);
 
         String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
         for (String beanName : beanNamesForType) {
