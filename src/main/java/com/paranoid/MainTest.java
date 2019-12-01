@@ -12,12 +12,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class MainTest {
     public static void main(String[] args) {
-//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
-////        Person person = (Person) applicationContext.getBean("person");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
+        Person person = (Person) applicationContext.getBean("person");
 //        Person person = applicationContext.getBean(Person.class);
 //        System.out.println(person);
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
-        Person person = applicationContext.getBean(Person.class);
+//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+//        Person person = applicationContext.getBean(Person.class);
 
         String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
         for (String beanName : beanNamesForType) {

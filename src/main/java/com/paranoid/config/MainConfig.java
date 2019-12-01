@@ -7,13 +7,19 @@ package com.paranoid.config;
 
         import com.paranoid.bean.Person;
         import org.springframework.context.annotation.Bean;
+        import org.springframework.context.annotation.ComponentScan;
         import org.springframework.context.annotation.Configuration;
+        import org.springframework.context.annotation.FilterType;
+        import org.springframework.stereotype.Controller;
+
+        import java.lang.reflect.Type;
 
 /**
  * 配置类就相当于我们以前的配置文件
  */
 //@Configuration 这个注解就告诉Spring这是一个配置类
 @Configuration
+@ComponentScan(value = "com.paranoid" ,useDefaultFilters = false,includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,classes = Controller.class)})
 public class MainConfig {
     /**
      * 接下来进行bean的注册，我们可以写一个方法
